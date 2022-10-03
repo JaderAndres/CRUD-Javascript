@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia"> -->
+    <link rel="stylesheet" href="css/estilos.css">
+
+    <script src="js/scriptClientes.js"></script>
+</head>
+
+<body onload="tablaClientes()">
+    <div id="cabezera_ppal">
+        <div id="divTutulo">
+            <div>
+                <h1>TOMORROWLAND</h1>
+            </div>
+            <!-- <header>    
+            </header> -->
+        </div>
+
+        <div id="divMenu">
+            <nav>
+                <div>
+                    <a class="menu" href="index.html">Inicio</a>
+                    <a class="menu" href="ventas.html">Ventas</a>
+                    <a class="menu" href="clientes.html">Clientes</a>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <br />
+    <div id="divVentas" class="container">
+        <form>
+
+            <h1 style="text-align:center;">Clientes</h1>
+
+            <div class="form-group">
+                <label for="id"><b> ID </b></label>
+                <div id="divAccion">
+                    <div>
+                        <input class="form-control" type="text" name="id" id="id" value="">
+                        <small class="form-text text-danger" id="msgID"></small>
+                    </div>
+                    <div style="padding-left: 5px;">
+                        <button type="button" class="btn btn-default" onclick="buscarCliente()">Buscar</button>                
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="nombre"><b> Nombre </b></label>
+                <input class="form-control" type="text" name="nombre" id="nombre" value="" >
+                <small class="form-text text-danger" id="msgNombre"></small>
+            </div>
+
+            <div class="form-group">
+                <label for="apellido"><b> Apellido </b></label>
+                <input class="form-control" type="text" name="apellido" id="apellido" value="" >
+                <small class="form-text text-danger" id="msgApellido"></small>
+            </div>
+
+            <div class="form-group">
+                <label for="direccion"><b> Dirección </b></label>
+                <input class="form-control" type="text" name="direccion" id="direccion" value="" >
+                <small class="form-text text-danger" id="msgDireccion"></small>
+            </div>
+
+            <div class="form-group">
+                <label for="email"><b> Email </b></label>
+                <input class="form-control" type="text" name="email" id="email" value="">
+                <small class="form-text text-danger" id="msgEmail"></small>
+            </div>
+
+            <div class="form-group">
+                <label for="ciudad"><b> Ciudad </b></label>
+                <input class="form-control" type="text" name="ciudad" id="ciudad" value="">
+                <small class="form-text text-danger" id="msgCiudad"></small>
+            </div>
+                    
+            <div style="text-align: center;">
+                <input class="btn btn-default" type="button" value="Confirmar cliente" onclick="nuevoCliente()" />
+                <button type="button" class="btn btn-default" onclick="actualizarCliente()">Actualizar</button>
+                <button type="button" class="btn btn-default" onclick="eliminarCliente()">Eliminar</button>
+                <button type="button" class="btn btn-default" onclick="limpiarDatos()">Limpiar</button>
+                <!-- <button type="button" class="btn btn-default"><a href="listadoclientes.html" style="text-decoration: none; color:black;">Ir al listado...</a></button> -->
+                <a href="listadoclientes.html" style="text-decoration: none; color:black;">Ir al listado...</a>
+            </div>
+            
+        </form>
+    </div>
+    <br />
+    <br/>
+    <div class="tabla" style="margin-left: 20px; margin-right: 20px;">
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Dirección</th>
+                        <th>EMail</th>
+                        <th>Ciudad</th>
+                    </tr>
+                </thead>
+                <tbody id="cuerpoTabla">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+
+</html>
